@@ -1,5 +1,7 @@
 package io.github.effectivedev.effectivejava.chapter7;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +31,7 @@ public class Item46 {
         list.add("bcd");
         list.add("test");
         freq = list.stream().collect(groupingBy(String::toLowerCase, counting()));
-        System.out.println(freq);
+        
 
         List<String> topTen = freq.keySet().stream().sorted(comparing(freq::get).reversed())
                 .limit(2).collect(Collectors.toList());
